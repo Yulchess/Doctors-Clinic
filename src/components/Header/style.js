@@ -5,75 +5,107 @@ export const Wrapper = styled.header`
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 3;
+  z-index: ${({ theme }) => theme.index[3]};
+  padding-top: ${({ theme }) => theme.spacing[21]}px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    padding: ${({ theme }) => theme.spacing[0]};
+  }
 `;
 
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: ${({ theme }) => theme.index[1]};
 `;
 export const LogIn = styled.p`
-  margin-left: 20px;
+  margin-left: ${({ theme }) => theme.spacing[9]}px;
 `;
 export const NavigatorWrapper = styled.nav`
   display: flex;
   align-items: center;
-
-  @media (max-width: 1100px) {
+  max-width: ${({ theme }) => theme.NAVIGATOR_WRAPPER_WIDTH}%;
+  width: ${({ theme }) => theme.width[5]}%;
+  justify-content: space-between;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
     flex-flow: column nowrap;
     position: fixed;
-    top: 0;
-    right: 0;
-    margin: 0;
+    top: ${({ theme }) => theme.spacing[0]};
+    right: ${({ theme }) => theme.spacing[0]};
+    margin: ${({ theme }) => theme.spacing[0]};
     align-items: center;
     transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
-    height: 100vh;
-    width: 200px;
-    padding-top: 3.5rem;
-
-    background-color: ${(props) => props.theme.colors.ligthGray};
+    height: ${({ theme }) => theme.height[6]}vh;
+    width: ${({ theme }) => theme.width[8]}px;
+    padding-top: ${({ theme }) => theme.spacing[1]}rem;
+    justify-content: flex-start;
+    background-color: ${({ theme }) => theme.colors.ligthGray};
   }
 `;
 
 export const NavigatorText = styled.a`
   cursor: pointer;
-  margin-right: 30px;
+  font-size: ${({ theme }) => theme.fontSize[1]}px;
+  margin-right: ${({ theme }) => theme.spacing[13]}px;
   &:hover {
-    color: ${(props) => props.theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.secondary};
   }
-  color: ${(props) => props.theme.colors.gray};
-  @media (max-width: 1100px) {
-    margin-bottom: 20px;
-    margin-left: 40px;
-    color: ${(props) => props.theme.colors.black};
+  color: ${({ theme }) => theme.colors.gray};
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    margin-bottom: ${({ theme }) => theme.spacing[9]}px;
+    margin-left: ${({ theme }) => theme.spacing[15]}px;
+    color: ${({ theme }) => theme.colors.black};
   }
 `;
 
 export const NotificationIcon = styled.img`
-  margin-right: 82px;
-  @media (max-width: 1100px) {
-    margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    margin: ${({ theme }) => theme.spacing[0]};
   }
 `;
-export const LogoIcon = styled.img``;
+
+export const LogInWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    flex-direction: column;
+  }
+`;
+export const LogoIcon = styled.img`
+  max-width: ${({ theme }) => theme.width[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.xs[2]}px) {
+    width: ${({ theme }) => theme.width[3]}px;
+  }
+`;
 export const LogoInfo = styled.p`
-  margin: 0;
-  font-weight: 700;
-  margin-left: 10px;
+  font-size: ${({ theme }) => theme.fontSize[1]}px;
+  margin: ${({ theme }) => theme.spacing[0]};
+  font-weight: ${({ theme }) => theme.fontWeight[0]};
+  margin-left: ${({ theme }) => theme.spacing[4]}px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.xs[2]}px) {
+    font-size: ${({ theme }) => theme.fontSize[0]}px;
+    margin: ${({ theme }) => theme.spacing[0]};
+  }
+`;
+export const Navigation = styled.div`
+  display: flex;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    flex-direction: column;
+  }
 `;
 
 export const RegistrationButton = styled.button`
-  margin-right: 20px;
-  color: ${(props) => props.theme.colors.white};
-  background-color: ${(props) => props.theme.colors.secondary};
-  border-radius: 30px;
+  margin-right: ${({ theme }) => theme.fontSize[6]}px;
+  font-size: ${({ theme }) => theme.fontSize[1]}px;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  border-radius: ${({ theme }) => theme.spacing[13]}px;
   cursor: pointer;
-  padding: 12px 32px;
+  padding: ${({ theme }) => theme.spacing[7]}px
+    ${({ theme }) => theme.spacing[15]}px;
   border: none;
-  @media (max-width: 1100px) {
-    margin: 0;
-
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    margin: ${({ theme }) => theme.spacing[0]};
+    margin-bottom: ${({ theme }) => theme.spacing[9]}px;
     flex-flow: column nowrap;
   }
 `;
@@ -81,38 +113,38 @@ export const RegistrationButton = styled.button`
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  flex: 2;
-  @media (max-width: 1100px) {
+  flex: ${({ theme }) => theme.index[2]};
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
     flex-flow: column nowrap;
     display: ${({ open }) => (open ? "flex" : "none")};
     transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
     position: fixed;
-    top: 0;
-    right: 0;
+    top: ${({ theme }) => theme.spacing[0]};
+    right: ${({ theme }) => theme.spacing[0]};
   }
 `;
 
 export const StyledBurger = styled.div`
-  @media (max-width: 1100px) {
-    width: 2rem;
-    height: 2rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg[0]}px) {
+    width: ${({ theme }) => theme.width[1]}rem;
+    height: ${({ theme }) => theme.height[1]}rem;
     position: fixed;
-    top: 7px;
-    right: 10px;
+    top: ${({ theme }) => theme.spacing[3]}px;
+    right: ${({ theme }) => theme.spacing[4]}px;
     display: flex;
     justify-content: space-around;
     flex-flow: column;
     cursor: pointer;
-    z-index: 20px;
+    z-index: ${({ theme }) => theme.index[4]}px;
     div {
-      width: 2rem;
-      height: 0.25rem;
+      width: ${({ theme }) => theme.width[0]}rem;
+      height: ${({ theme }) => theme.height[0]}rem;
       background-color: ${({ open }) =>
         open
-          ? (props) => props.theme.colors.secondary
-          : (props) => props.theme.colors.black};
-      border-radius: 10px;
-      transform-origin: 1px;
+          ? ({ theme }) => theme.colors.secondary
+          : ({ theme }) => theme.colors.black};
+      border-radius: ${({ theme }) => theme.spacing[5]}px;
+      transform-origin: ${({ theme }) => theme.index[1]}px;
       transition: all 0.4s ease;
 
       &:nth-child(1) {

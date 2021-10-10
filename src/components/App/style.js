@@ -4,6 +4,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
-  max-width: 1280px;
+  margin: ${({ theme }) => theme.spacing[0]} auto;
+  max-width: ${({ theme }) => theme.width[17]}px;
 `;

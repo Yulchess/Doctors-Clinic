@@ -1,11 +1,13 @@
 import React from "react";
-import ManImage from "../../assets/Human.png";
+
+import ManImage from "@/assets/Human.png";
+import HumanVectorBig from "@/assets/HumanVectorBig.svg";
+import HumanVectorSmall from "@/assets/HumanVectorSmall.svg";
+import LinesImage from "@/assets/Lines-Left.svg";
+import LineRight from "@/assets/Lines-Rigth.svg";
+import MailImage from "@/assets/Mail.svg";
+
 import * as Styled from "./style";
-import HumanVectorSmall from "../../assets/HumanVectorSmall.svg";
-import HumanVectorBig from "../../assets/HumanVectorBig.svg";
-import MailImage from "../../assets/Mail.svg";
-import LinesImage from "../../assets/Lines-Left.svg";
-import LineRight from "../../assets/Lines-Rigth.svg";
 export const Main = () => {
   return (
     <Styled.InfoWrapper>
@@ -22,7 +24,7 @@ export const Main = () => {
         <Styled.InputWrapper>
           <Styled.MailIcon src={MailImage} />
           <Styled.Input placeholder="Enter your email"></Styled.Input>
-          <Styled.InputSubmit>Get Stared</Styled.InputSubmit>
+          <Styled.InputSubmit>Get Started</Styled.InputSubmit>
         </Styled.InputWrapper>
         <Styled.CountWrapper>
           <Styled.Counts>
@@ -50,8 +52,8 @@ export const Main = () => {
         <Styled.ManVectorSmall src={HumanVectorSmall} />
         <Styled.ManVectorLarge src={HumanVectorBig} />
       </Styled.ImageWrapper>
-      {/* <Styled.LinesIcon src={LinesImage} />
-      <Styled.LineRigthImage src={LineRight} /> */}
+      <Styled.LinesIcon src={LinesImage} />
+      <Styled.LineRigthImage src={LineRight} />
     </Styled.InfoWrapper>
   );
 };

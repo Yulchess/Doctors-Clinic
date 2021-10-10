@@ -1,10 +1,12 @@
 import React from "react";
-import { theme } from "../../theme";
 import { ThemeProvider } from "styled-components";
-import GlobalStyles from "../../globalStyles";
+
+import { Header } from "@/components/Header";
+import { Main } from "@/components/Main";
+import GlobalStyles from "@/globalStyles";
+import { theme } from "@/theme";
+
 import { Content } from "./style";
-import { Header } from "../Header";
-import { Main } from "../Main";
 
 function App() {
   return (
